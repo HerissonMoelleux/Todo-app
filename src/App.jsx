@@ -4,17 +4,14 @@ import "./App.css";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
 import { removeTask, toggleTask } from "./utils/taskUtils.js";
 import { INITIAL_TASKS } from "./constants/initialData.js";
-import { generateId } from "./utils/idGenerator.js";
 
 function App() {
   const [tasks, setTasks] = useState(INITIAL_TASKS);
 
   const handleAddTask = useCallback((content, category) => {
-    if (!content.trim()) return;
-
     const newTask = {
-      id: generateId(),
-      content: content.trim(),
+      id: Date.now(),
+      content: content,
       isComplete: false,
     };
 

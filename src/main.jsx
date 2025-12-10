@@ -6,9 +6,7 @@ import "./index.css";
 import App from "./App.jsx";
 import Home from "./components/Pages/HomePage/Home.jsx";
 import Upcoming from "./components/Pages/UpcomingPage/Upcoming.jsx";
-import Today from "./components/Pages/Today.jsx";
-import Tomorrow from "./components/Pages/Tomorrow.jsx";
-import Week from "./components/Pages/Week.jsx";
+import Category from "./components/Pages/CategoryPage/Category.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,15 +23,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/today",
-        element: <Today />,
+        element: <Category category="today" title="Today" />,
       },
       {
         path: "/tomorrow",
-        element: <Tomorrow />,
+        element: <Category category="tomorrow" title="Tomorrow" />,
       },
       {
         path: "/week",
-        element: <Week />,
+        element: <Category category="week" title="This Week" />,
       },
     ],
   },

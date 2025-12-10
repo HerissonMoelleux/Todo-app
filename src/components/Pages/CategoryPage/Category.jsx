@@ -1,7 +1,7 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
-import styles from "./page.module.css";
-import TaskCard from "../TaskCard/TaskCard.jsx";
+import styles from "./Category.module.css";
+import TaskCard from "../../TaskCard/TaskCard.jsx";
 
 function CategoryPage({ category, title }) {
   const { tasks, handleAddTask, handleRemoveTask, handleToggleTask } =
