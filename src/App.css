@@ -1,0 +1,15 @@
+.App {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5vh;
+  gap: 30px;
+  height: 100vh;
+}
+
+.main {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}

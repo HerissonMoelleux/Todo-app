@@ -1,0 +1,41 @@
+.item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 8px 20px;
+  border-bottom: 1px solid #454545;
+  line-height: 1;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  gap: 12px;
+}
+
+.input {
+  width: 16px;
+  height: 16px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 350;
+}
+
+.taskButton {
+  border: none;
+  background: none;
+  padding-right: 24px;
+  cursor: pointer;
+}
+
+.deleteIcon {
+  height: 18px;
+  width: 18px;
+}

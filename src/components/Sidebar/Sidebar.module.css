@@ -1,0 +1,50 @@
+.sidebarContainer {
+  background: #f4f4f4;
+  border-radius: 50px;
+  height: 90vh;
+  width: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px 35px;
+}
+
+.searchBox {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.searchBox::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 18px;
+
+  background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.875 11.875C9.63642 11.875 11.875 9.63642 11.875 6.875C11.875 4.11358 9.63642 1.875 6.875 1.875C4.11358 1.875 1.875 4.11358 1.875 6.875C1.875 9.63642 4.11358 11.875 6.875 11.875Z' stroke='black' stroke-opacity='0.7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.125 13.125L10.4062 10.4062' stroke='black' stroke-opacity='0.7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+  background-size: cover;
+  pointer-events: none;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.search {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+  background: #ebebeb;
+  border: none;
+  border-radius: 36px;
+  padding: 3px 0 0 40px;
+  font-size: 16px;
+}

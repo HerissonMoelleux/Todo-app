@@ -1,0 +1,109 @@
+.card {
+  width: 100%;
+
+  border-radius: 30px;
+  border: 1px solid #454545;
+  background-color: #fff;
+  
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.5rem 2rem;
+  overflow: hidden;
+}
+
+.upcomingCard {
+  height: 37vh;
+  max-height: 37vh;
+}
+
+.pageCard {
+  height: 100%;
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
+.header {
+  flex-shrink: 0;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  color: #454545;
+  margin: 0;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid #454545;
+  border-radius: 12px;
+  transition: border-color 0.2s;
+}
+
+.taskList {
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.taskList::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.inputWrapper:focus-within {
+  border-color: #000;
+}
+
+.inputField {
+  border: none;
+  outline: none;
+  background: none;
+  
+  width: 100%;
+  font-size: 16px;
+  font-family: inherit;
+  color: #454545;
+}
+
+.inputField::placeholder {
+  color: #999;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.addButton {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.addButton:hover {
+  opacity: 0.7;
+}
+
+.addButton:active {
+  transform: scale(0.95);
+}

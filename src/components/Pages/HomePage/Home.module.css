@@ -1,0 +1,22 @@
+.homeContainer {
+  background: #F4F4F4;
+  height: 90vh;
+  width: 150vh;
+  display: flex;
+  padding: 100px ;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 50px;
+}
+
+.homeTitle {
+  font-weight: 550;
+}
+
+.homeText {
+  text-align: center;
+  font-size: 20px;
+  width: 60%;
+}
+
