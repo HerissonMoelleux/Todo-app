@@ -9,6 +9,7 @@ import Upcoming from "./components/Pages/UpcomingPage/Upcoming.jsx";
 import Category from "./components/Pages/CategoryPage/Category.jsx";
 
 const router = createBrowserRouter([
+  // Вынести в отдельный файл роутер
   {
     path: "/",
     element: <App />,

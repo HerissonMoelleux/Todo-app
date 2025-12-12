@@ -1,13 +1,10 @@
 .card {
   width: 100%;
-
   border-radius: 30px;
   border: 1px solid #454545;
   background-color: #fff;
-  
   display: flex;
   flex-direction: column;
-
   padding: 1.5rem 2rem;
   overflow: hidden;
 }
@@ -50,7 +47,6 @@
 }
 
 .taskList {
-
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -72,7 +68,6 @@
   border: none;
   outline: none;
   background: none;
-  
   width: 100%;
   font-size: 16px;
   font-family: inherit;

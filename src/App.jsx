@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
@@ -6,7 +6,35 @@ import { removeTask, toggleTask } from "./utils/taskUtils.js";
 import { INITIAL_TASKS } from "./constants/initialData.js";
 
 function App() {
-  const [tasks, setTasks] = useState(INITIAL_TASKS);
+  const APP_PREFIX = "myTodoApp_";
+
+  const [tasks, setTasks] = useState(() => {
+    try {
+      const saved = localStorage.getItem(`${APP_PREFIX}tasks`);
+      return saved ? JSON.parse(saved) : INITIAL_TASKS;
+    } catch {
+      return INITIAL_TASKS;
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem(`${APP_PREFIX}tasks`, JSON.stringify(tasks));
+  }, [tasks]);
+
+  useEffect(() => {
+    const handleStorageChange = (event) => {
+      if (event.key === `${APP_PREFIX}tasks` && event.newValue) {
+        const updatedTasks = JSON.parse(event.newValue);
+        setTasks(updatedTasks);
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   const handleAddTask = useCallback((content, category) => {
     const newTask = {

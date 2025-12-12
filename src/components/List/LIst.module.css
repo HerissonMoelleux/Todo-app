@@ -1,95 +1,79 @@
-/* Контейнер для всего блока списка */
 .tasksContainer {
   display: flex;
   flex-direction: column;
-  gap: 8px;            /* Чуть меньше отступ между заголовком и списком */
-  margin-bottom: 24px; /* Отступ снизу от всей группы (чтобы списки не слипались) */
+  gap: 8px;
+  margin-bottom: 24px;
 }
 
-/* Заголовок (Tasks, Lists) */
 .tasksTitle {
-  font-size: 12px;     /* Делаем меньше */
-  text-transform: uppercase; /* Капсом */
-  letter-spacing: 0.05em;    /* Чуть разряжаем буквы */
-  color: #8D8D8D;      /* Серый цвет (не черный), чтобы не спорил с контентом */
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8d8d8d;
   font-weight: 700;
-  padding-left: 12px;  /* Выравниваем по тексту элементов списка */
-  margin: 0;           /* Убираем дефолтные отступы */
+  padding-left: 12px;
+  margin: 0;
 }
 
-/* Сам список (ul) */
 .tasksList {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px; /* Небольшое расстояние между элементами списка */
+  gap: 4px;
 }
 
-/* Элемент списка (ссылка a) */
 .tasksListItem {
   text-decoration: none;
-  color: #454545;      /* Темно-серый, мягче черного */
-  
+  color: #454545;
   display: flex;
   align-items: center;
-  padding: 8px 12px;   /* Комфортные отступы внутри плашки */
-  gap: 12px;           /* Расстояние от иконки до текста */
-  
-  border-radius: 8px;  /* Современное скругление (не слишком круглое) */
-  transition: all 0.2s ease; /* Плавность для ховера и актива */
+  padding: 8px 12px;
+  gap: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   cursor: pointer;
-  
-  /* Чтобы текст не скакал при изменении жирности */
   border: 1px solid transparent;
 }
 
-/* Иконка */
 .tasksImg {
   width: 20px;
   height: 20px;
-  opacity: 0.8; /* Чуть приглушаем иконки */
+  opacity: 0.8;
 }
 
-/* Текст элемента */
 .tasksText {
   font-size: 16px;
   font-weight: 500;
   margin: 0;
 }
 
-/* Счетчик справа */
 .tasksCount {
-  margin-left: auto; /* ВАЖНО: Толкает счетчик в самый правый край */
-  
+  margin-left: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  padding: 2px 8px;  /* Отступы внутри баббла */
-  min-width: 24px;   /* Минимальная ширина */
+  padding: 2px 8px;
+  min-width: 24px;
   height: 20px;
-  
   border-radius: 6px;
-  background-color: #eeeeee; /* Очень светлый фон */
-  color: #8D8D8D;            /* Цвет цифры */
+  background-color: #eee;
+  color: #8d8d8d;
   font-size: 12px;
   font-weight: 600;
 }
 
 .tasksListItem:hover {
-  background-color: #EBEBEB;
+  background-color: #ebebeb;
 }
 
-/* Активное состояние (Выбранный пункт) */
 .isActive {
-  background-color: #EBEBEB; /* Твой серый цвет */
-  color: #000;               /* Черный текст */
-  font-weight: 600;          /* Выделяем жирным */
+  background-color: #ebebeb;
+  color: #000;
+  font-weight: 600;
 }
 
 .isActive .tasksCount {
   background-color: #f2f2f2;
-
 }

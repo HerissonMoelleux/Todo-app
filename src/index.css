@@ -11,7 +11,7 @@ html, body, #root {
 }
 
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: Oswald, sans-serif;
 }
 
 button, input, textarea, select {
