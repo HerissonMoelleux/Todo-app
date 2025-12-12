@@ -64,7 +64,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="app">
       <Sidebar
         todayCount={tasks.today.length}
         weekCount={tasks.week.length}

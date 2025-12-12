@@ -23,11 +23,20 @@ export default defineConfig([
       },
     },
     rules: {
-      "no-unused-vars": ["error", { varsIgnorePattern: "^[A-Z_]" }],
-      "no-console": "warn",
-      eqeqeq: "warn",
+      "no-unused-vars": [
+        "error",
+        {
+          varsIgnorePattern: "^[A-Z_]",
+          argsIgnorePattern: "^_",
+        },
+      ],
+      "no-console": ["warn", { allow: ["warn", "error"] }],
+      eqeqeq: ["error", "always", { null: "ignore" }],
       "no-else-return": "warn",
-      curly: "warn",
+      curly: ["error", "all"],
+      "prefer-const": "error",
+      "no-var": "error",
+      "react-hooks/exhaustive-deps": "warn",
     },
   },
 ]);
