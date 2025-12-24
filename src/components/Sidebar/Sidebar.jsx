@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import styles from "./Sidebar.module.css";
 import upcomingIcon from "../../assets/upcoming.svg";
 import listIcon from "../../assets/list.svg";
@@ -13,7 +13,12 @@ const listsList = [
   { id: 3, icon: blueIcon, title: "Work", count: "0", path: "/work" },
 ];
 
-function Sidebar({ todayCount = 0, weekCount = 0, tomorrowCount = 0 }) {
+function Sidebar({
+  todayCount = 0,
+  weekCount = 0,
+  tomorrowCount = 0,
+  onSearch,
+}) {
   const tasksList = useMemo(
     () => [
       {
@@ -48,11 +53,27 @@ function Sidebar({ todayCount = 0, weekCount = 0, tomorrowCount = 0 }) {
     [todayCount, tomorrowCount, weekCount]
   );
 
+  const [inputValue, setInputValue] = useState("");
+
+  const handleChange = (event) => {
+    const input = event.target.value;
+    setInputValue(input);
+    if (onSearch) {
+      onSearch(input);
+    }
+  };
+
   return (
     <div className={styles.sidebarContainer}>
       <h1 className={styles.title}>Menu</h1>
       <div className={styles.searchBox}>
-        <input className={styles.search} type="text" placeholder="Search..." />
+        <input
+          className={styles.search}
+          type="text"
+          placeholder="Search..."
+          value={inputValue}
+          onChange={handleChange}
+        />
       </div>
 
       <List title={"Tasks"} lists={tasksList} />

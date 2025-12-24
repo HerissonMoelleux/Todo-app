@@ -4,10 +4,12 @@ import "./App.css";
 import Sidebar from "./components/Sidebar/Sidebar.jsx";
 import { removeTask, toggleTask } from "./utils/taskUtils.js";
 import { INITIAL_TASKS } from "./constants/initialData.js";
+import { filterBySearch } from "./utils/search.js";
 
 function App() {
   const APP_PREFIX = "myTodoApp_";
 
+  const [searchQuery, setSearchQuery] = useState("");
   const [tasks, setTasks] = useState(() => {
     try {
       const saved = localStorage.getItem(`${APP_PREFIX}tasks`);
@@ -63,18 +65,30 @@ function App() {
     }));
   }, []);
 
+  const filteredTasks = React.useMemo(() => {
+    if (!searchQuery) {
+      return tasks;
+    }
+    return {
+      today: filterBySearch(searchQuery, tasks.today),
+      tomorrow: filterBySearch(searchQuery, tasks.tomorrow),
+      week: filterBySearch(searchQuery, tasks.week),
+    };
+  }, [tasks, searchQuery]);
+
   return (
     <div className="app">
       <Sidebar
         todayCount={tasks.today.length}
         weekCount={tasks.week.length}
         tomorrowCount={tasks.tomorrow.length}
+        onSearch={setSearchQuery}
       />
 
       <main className="main">
         <Outlet
           context={{
-            tasks,
+            tasks: filteredTasks,
             handleAddTask,
             handleRemoveTask,
             handleToggleTask,

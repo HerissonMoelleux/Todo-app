@@ -4,16 +4,17 @@
   padding: 0;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: Oswald, sans-serif;
-}
-
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font-family: inherit;
 }
